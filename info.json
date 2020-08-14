@@ -1,0 +1,13 @@
+{
+  "name": "My-Tree-Mod-Update",
+  "version": "1.1.4",
+  "factorio_version": "1.0",
+  "title": "My Tree Mod (Update for 1.0)",
+  "author": "Yes-Man",
+  "homepage": "",
+  "license": "MIT",
+  "description": "Craft and plant (blue-printable) tree saplings that grow into trees, and automate it with the Recursive Blueprints mod. This is an update of 'My Tree Mod' from SamuelCombrinck, which was inspired by 'Simple Saplings' made by hypermark which apparently was a fork of 'JJtJJs Tree Planting Mod'.",
+  "dependencies": [
+    "base >= 0.18"
+  ]
+}
