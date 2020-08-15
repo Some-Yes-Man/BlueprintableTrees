@@ -4,7 +4,7 @@ data:extend({
         type = "container",
         name = "tree-sapling",
         inventory_size = 0,
-        icon = "__My-Tree-Mod-Update__/graphics/tree-sapling-icon.png",
+        icon = "__Blueprintable-Plantable-Trees__/graphics/tree-sapling-icon.png",
         flags = { "player-creation", "placeable-neutral", "breaths-air", "not-repairable" },
         icon_size = 32,
         minable = {
@@ -21,7 +21,7 @@ data:extend({
             volume = 1.0
         },
         picture = {
-            filename = "__My-Tree-Mod-Update__/graphics/tree-sapling.png",
+            filename = "__Blueprintable-Plantable-Trees__/graphics/tree-sapling.png",
             priority = "extra-high",
             width = 32,
             height = 42,
@@ -32,7 +32,7 @@ data:extend({
     {
         type = "item",
         name = "tree-sapling",
-        icon = "__My-Tree-Mod-Update__/graphics/tree-sapling-icon.png",
+        icon = "__Blueprintable-Plantable-Trees__/graphics/tree-sapling-icon.png",
         flags = {},
         icon_size = 32,
         subgroup = "raw-material",
