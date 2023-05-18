@@ -12,7 +12,7 @@ local tree_types = {
     'tree-06'
 }
 
-script.on_event(defines.events.on_robot_built_entity, function(event)
+local function processEvent(event)
     if event.created_entity.name == 'tree-sapling' then
         --Get a random grow tick
         local grow_tick = (avg_grow_time or 60 * 60 * 5) + math.random(-max_grow_swing, max_grow_swing) + event.tick
@@ -22,18 +22,22 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
         local sapling = global.growing_times[grow_tick]
         sapling[#sapling + 1] = { entity = event.created_entity }
     end
+end
+
+script.on_event(defines.events.on_robot_built_entity, function(event)
+    processEvent(event)
 end)
 
 script.on_event(defines.events.on_built_entity, function(event)
-    if event.created_entity.name == 'tree-sapling' then
-        --Get a random grow tick
-        local grow_tick = (avg_grow_time or 60 * 60 * 5) + math.random(-max_grow_swing, max_grow_swing) + event.tick
-        --Get or create the global tick to grow on
-        global.growing_times[grow_tick] = global.growing_times[grow_tick] or {}
-        --local reference because speed and things
-        local sapling = global.growing_times[grow_tick]
-        sapling[#sapling + 1] = { entity = event.created_entity }
-    end
+    processEvent(event)
+end)
+
+script.on_event(defines.events.script_raised_built, function(event)
+    processEvent(event)
+end)
+
+script.on_event(defines.events.script_raised_revive, function(event)
+    processEvent(event)
 end)
 
 -- Grow trees every few ticks
